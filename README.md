@@ -1,10 +1,5 @@
 # MyBlog
 ---
-title: github搭建blog
-date: 2016-01-12 16:30:16
-category: hexo
-tags: hexo
----
 # 1.创建github仓库
 在github中创建一个名字为 xxx.github.io 的仓库,xxx为github为账号。
 # 2.使用hexo 主题
