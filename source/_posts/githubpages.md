@@ -1,6 +1,6 @@
 ---
 title: github搭建blog
-date: 2016-01-12 16:30:16
+date: 2016-01-10 13:30:16
 category: hexo
 tags: hexo
 ---
