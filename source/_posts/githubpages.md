@@ -29,6 +29,18 @@ $ git clone https://github.com/wuchong/jacman.git themes/jacman
 	Target：192.30.252.153
 ## 3.3添加CNAME
 在xxx.github.io仓库中添加没有后缀的CNAME文件，内容为域名URL
+# 4.git
+## 4.1忽略blog源码工程中的文件
+ -.gitinore 中添加/public，忽略生成的blog网站代码
+ -.gitinore 中添加/.deploy_git
+## 4.2上传blog到github
+ ```
+ $ hexo g
+ $ hexo d
+ ```
+防止每次hexo d删除CNANE,README.md文件，把这2个文件放在blog源码工程的/source目录，
+并且README.md重命名为README.MDOWN。
+
 
 
 
