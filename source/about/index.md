@@ -1,5 +1,6 @@
 title: About
 date: 2016-01-10
+comments: false
 ---
 # 个人信息 
 
