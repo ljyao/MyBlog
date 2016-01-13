@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Shine Lee
+title: Shine's blog
 subtitle: 生命不息，折腾不止！！！
 description:
 author: Shine Lee
-language: zh-CN
+language: zh-Hans
 timezone: 
 
 # URL
@@ -64,10 +64,15 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: jacman
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: git@github.com:ljyao/ljyao.github.io.git
+
+# Social links
+social:
+  github: https://github.com/ljyao
+  weibo: http://weibo.com/3715142347

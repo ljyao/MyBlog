@@ -4,7 +4,6 @@ date: 2016-01-12 19:31:52
 category: android
 tags: listview
 ---
-# 1.Listview和GridView中的子view的onlayout(),onmeasure()执行次数
 在listview的getview中setData(),在子view的setdata(),onlayout(),onmeasure()方法中写上log,
 发现setdata(),最先执行，onmeasure()执行了2次，onlayout()执行了一次，通过看listview源码找到原因。
 - getHeightForPosition()方法中view.measure（）
@@ -16,7 +15,9 @@ data->com.nice.main.data.enumerable.Show@17239164onMeasure
 data->com.nice.main.data.enumerable.Show@17239164onMeasure
 data->com.nice.main.data.enumerable.Show@17239164onLayout
 ```
-## 1.1在AbsListView.java类中getHeightForPosition()，onMeasure执行一次
+<!-- more -->
+# Listview和GridView中的子view的onlayout(),onmeasure()执行次数
+## 在AbsListView.java类中getHeightForPosition()，onMeasure执行一次
 ```
    /**
      * Returns the height of the view for the specified position.
@@ -42,7 +43,7 @@ data->com.nice.main.data.enumerable.Show@17239164onLayout
         }
     }
 ```
-## 1.2在AbsListView.java类中obtainView()，onMeasure,onlayout各执行一次
+## 在AbsListView.java类中obtainView()，onMeasure,onlayout各执行一次
 ```
  /**
      * Get a view and have it show the data associated with the specified
@@ -107,7 +108,7 @@ View.java
     }
 
 ```
-# 2.RecyclerView中子view的onlyaout，onMeasure次数
+# RecyclerView中子view的onlyaout，onMeasure次数
 RecyclerView会多次对子view.measure
 ```
 data->com.nice.main.data.enumerable.Show@183bd061setdata
@@ -117,7 +118,7 @@ data->com.nice.main.data.enumerable.Show@183bd061onMeasure
 data->com.nice.main.data.enumerable.Show@183bd061onMeasure
 data->com.nice.main.data.enumerable.Show@183bd061onLayout
 ```
-## 2.1 RecyclerView的bindViewToPosition引起子view重绘
+## RecyclerView的bindViewToPosition引起子view重绘
 RecyclerView.java
 ```
    /**
@@ -156,7 +157,7 @@ RecyclerView.java
         }
 
 ```
-## 2.2RecyclerView中的对子view的measure
+## RecyclerView中的对子view的measure
 ```
         /**
          * Measure a child view using standard measurement policy, taking the padding

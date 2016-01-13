@@ -5,11 +5,12 @@ tags: format
 ---
  # string.xml 中的转义
  - ' "需要用\转义或对整个字符串加上 ""
+ 
  ```
 <string name="good_example">This\'ll work</string>
 <string name="good_example_2">"This'll also work"</string>
 ```
-
+<!-- more -->
  - " 需要用\转义,写成 \"
  ```
 <string name="good_example">This is a \"good string\".</string>
