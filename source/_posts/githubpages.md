@@ -14,7 +14,8 @@ tags: hexo
 ```
 $ npm install -g hexo-cli
 ```
-  [hexo官网](https://hexo.io/zh-cn/)
+<!-- more -->
+ [hexo官网](https://hexo.io/zh-cn/)
 ## 使用jacman主题
 ```
 $ git clone https://github.com/wuchong/jacman.git themes/jacman
