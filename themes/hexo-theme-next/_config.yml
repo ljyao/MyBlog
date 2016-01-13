@@ -27,8 +27,8 @@ rss:
 # Remove leading slashes ( "/archives" -> "archives" )
 menu:
   home: /
-  #categories: /categories
-  archives: /archives
+  categories: /categories
+  archives: "archives"
   tags: /tags
   about: /about
   #commonweal: /404.html
