@@ -166,7 +166,7 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 6e3e65b6fa6d46bfec86b332d7db0bcb
 
 # Duoshuo ShortName
 duoshuo_shortname: shinelee
