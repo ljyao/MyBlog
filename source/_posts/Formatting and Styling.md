@@ -1,7 +1,7 @@
 title: Formatting and Styling
 date: 2016-01-11 19:07:12
 category: android
-tags: format
+tags: tools
 ---
  # string.xml 中的转义
  - ' "需要用\转义或对整个字符串加上 ""

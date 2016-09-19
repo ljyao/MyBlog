@@ -2,7 +2,7 @@
 title: android性能优化
 date: 2016-01-26 10:15:49
 category: android
-tags: android性能优化
+tags: 性能优化
 ---
 # UI优化
 ## 合理使用merge

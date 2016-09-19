@@ -2,7 +2,7 @@
 title: 关于listview子view的绘制
 date: 2016-01-12 19:31:52
 category: android
-tags: listview
+tags: view
 ---
 在listview的getview中setData(),在子view的setdata(),onlayout(),onmeasure()方法中写上log,
 发现setdata(),最先执行，onmeasure()执行了2次，onlayout()执行了一次，通过看listview源码找到原因。

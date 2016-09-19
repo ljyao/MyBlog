@@ -2,7 +2,7 @@
 title: android shape
 date: 2016-04-19 22:31:59
 category: android
-tags: shape
+tags: drawable
 ---
 ```
 <?xml version="1.0" encoding="utf-8"?>

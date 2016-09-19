@@ -2,7 +2,7 @@
 title: MeasureSpec
 date: 2016-07-26 10:43:15
 category: android
-tags: 自定义view
+tags: view
 ---
 最近发现，重写了viewGroup的onMeasure方法，造成子view match_parent不起作用，代码如下：
 ```

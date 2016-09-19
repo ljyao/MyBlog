@@ -2,7 +2,7 @@
 title: RecycleView
 date: 2016-01-26 10:36:58
 category: android
-tags: RecycleView
+tags: view
 ---
     个人觉得RecycleView很强大，很好的扩展性，稳定，将会逐渐代替gridview和listview。
 # GridLayoutManager
