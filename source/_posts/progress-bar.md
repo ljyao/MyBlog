@@ -25,19 +25,16 @@ tags:
                 height - delta);
 
         float innerCircleRadius = (width - 2 * Math.min(finishedStrokeWidth, unfinishedStrokeWidth) + Math.abs(finishedStrokeWidth - unfinishedStrokeWidth)) / 2f;
+        //背景圆
         canvas.drawCircle(width / 2.0f, height / 2.0f, innerCircleRadius, innerCirclePaint);
 
         int startingDegree = getStartingDegree();
         float progressAngle = getProgressAngle();
 
-        if (clockwise) {
-            canvas.drawArc(unfinishedOuterRect, startingDegree + progressAngle, 360 - progressAngle, false, unfinishedPaint);
-            canvas.drawArc(finishedOuterRect, startingDegree, progressAngle, false, finishedPaint);
-        } else {
-            canvas.drawArc(unfinishedOuterRect, startingDegree, 360 - progressAngle, false, unfinishedPaint);
-            canvas.drawArc(finishedOuterRect, startingDegree + progressAngle, progressAngle, false, finishedPaint);
-        }
-
+        canvas.drawArc(unfinishedOuterRect, startingDegree + progressAngle, 360 - progressAngle, false, unfinishedPaint);
+        canvas.drawArc(finishedOuterRect, startingDegree, progressAngle, false, finishedPaint);
+    
+        //文字
         if (!TextUtils.isEmpty(text)) {
             float textHeight = textPaint.descent() + textPaint.ascent();
             canvas.drawText(text, (getWidth() - textPaint.measureText(text)) / 2.0f, (getWidth() - textHeight) / 2.0f, textPaint);
@@ -45,12 +42,12 @@ tags:
     }
 
 ```
-
+<!--more-->
 # Controler
 负责进度条、颜色等刷新
 
 UI定时刷新方式有以下几种
-1. Thread.sleep
+## Thread.sleep
 在短视频拍摄中，视频的处理占用大量cpu资源，发现sleep时间相当不准，尤其在低端机。
 查看Thread.sleep源码发现，在一个while循环中调用native sleep方法，然后比较睡眠时间，判断是否继续睡眠。
 ```
@@ -73,16 +70,16 @@ UI定时刷新方式有以下几种
             }
         }
 ```
-2. Timer
+## Timer
 用定时任务去属性进度，但是子线程与主线程的切换也是一种开销。
-3. Handler
+## Handler
 通过不停发延时handler去刷新UI，但是当主线有大量绘制任务，handler周期时间变得不可控。
-4. HandlerThread
+## HandlerThread
 通过子线程发送延时handler，与Timer相比，handler带来了很多便利，但是子线程与主线程的切换也是一种开销。
-5. 属性动画（自定义TypeEvaluator）
+## 属性动画（自定义TypeEvaluator）
 通过自定义TypeEvaluator，使用ValueAnimator去控制自定义的属性
 TypeEvaluator去计算最新的值
-、、、
+```
 public class ProgressBarEvaluator implements TypeEvaluator<ProgressBarEvaluator.ProgressValues> {
 
     @Override
@@ -129,9 +126,10 @@ public class ProgressBarEvaluator implements TypeEvaluator<ProgressBarEvaluator.
         }
     }
 }
-、、、
+```
 在AnimatorUpdateListener回调去刷新UI
 *** 注意setEvaluator要放在setObjectValues后 ***
+
 ```
  progressAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -146,8 +144,9 @@ public class ProgressBarEvaluator implements TypeEvaluator<ProgressBarEvaluator.
             }
         });
 ```
-6. 属性动画
-读完源码后，属性动画通过反射调用对象方法，驼峰命名，所以不需要自定义TypeEvaluator,注意方法名的混淆，加上注解 @Keep
+
+## 属性动画
+读完源码后，属性动画通过反射调用对象方法，驼峰命名，所以不需要自定义TypeEvaluator,注意方法名的混淆，加上注解 @Keep防止被混淆
 ```
         PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("scaleX", startScale, endScale);
         PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("scaleY", startScale, endScale);

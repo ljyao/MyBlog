@@ -9,6 +9,11 @@ tags:
 ps.Enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android.
 - 注解：相对常量比较安全，编译期就可以排除错误类型
 礼物控件用来播放礼物，从出现到消失共有8种状态（空闲、加载资源、进入中、播放礼物效果、连击动画、离开中、活跃的），多种状态是可以并行的，所以通过flag标记，一位表示一种状态，然后使用注解确保值的安全。
+1. @IntDef
+flag 是否是flag, value 枚举指定值，避免值的重复
+2. @Retention(RetentionPolicy.SOURCE)
+注解将在编译丢弃
+
 <!-- more -->
 ```
 public class GiftDisplayStatus {

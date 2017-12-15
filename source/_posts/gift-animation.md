@@ -77,6 +77,8 @@ tags:
 # WebP
 [WebP](https://developers.google.cn/speed/webp/)是 Google 在 2010 年发布的图片格式，希望以更高的压缩比替代 JPEG。它用 VP8 视频帧内编码作为其算法基础，取得了不错的压缩效果。它支持有损和无损压缩、支持完整的透明通道、也支持多帧动画，并且没有版权问题，是一种非常理想的图片格式。借由 Google 在网络世界的影响力，WebP 在几年的时间内已经得到了广泛的应用。看看你手机里的 App：微博、微信、QQ、淘宝、网易新闻等等，每个 App 里都有 WebP 的身影。Facebook 则更进一步，用 WebP 来显示聊天界面的贴纸动画。
 
+颜色更丰富，支持 24-bit 的 RGB 颜色以及 8-bit 的 Alpha 透明通道（而 GIF 只支持 8-bit RGB 颜色以及 1-bit 的透明）
+
 - 制作webp动画
 1. 在官网下载转换工作
 2. 把png转为webp
